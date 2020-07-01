@@ -25,8 +25,8 @@ def get_japanese_emoticon(path, e_emoticon)
       if e_emoticon == emoticon[i]
         translation = emoticon[i + 1]
       end
-      if translation == ""
-        translation = "Sorry, that emoticon was not found"
+      #if translation == ""
+       # translation = "Sorry, that emoticon was not found"
       i += 1
       end
     end
