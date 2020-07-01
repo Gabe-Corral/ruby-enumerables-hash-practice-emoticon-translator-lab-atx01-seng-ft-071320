@@ -21,14 +21,13 @@ def get_japanese_emoticon(path, e_emoticon)
   i = 0
   load_library(path).each do |key, lang|
     lang.each do |inner_key, emoticon|
-      array.push(emoticon)
+      array.push(emoticon.each)
       if e_emoticon == array[i]
         translation = array[i + 1]
       end
-      #if translation == ""
-       # translation = "Sorry, that emoticon was not found"
-      i += 1
-      #end
+      if translation == ""
+        translation = "Sorry, that emoticon was not found"
+      end
     end
   end
   translation
