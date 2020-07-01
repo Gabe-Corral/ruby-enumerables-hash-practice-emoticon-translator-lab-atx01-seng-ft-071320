@@ -15,17 +15,20 @@ def load_library(dir)
     
 end
 
-def get_japanese_emoticon(path, emoticon)
+def get_japanese_emoticon(path, e_emoticon)
   translation = ""
-  load_library(path).each do |key, lang|
-    lang.each do |inner_key, names|
-      if names == emoticon
-       translation = names
-     else translation = "Sorry, that emoticon was not found"
+  load_library(path).each do |emoticon, lang|
+    lang.each do |inner_key, emoticon|
+      if e_emoticon == emoticon
+        translation = emoticon
+      end
+      if e_emoticon == ""
+        translation = "Sorry, that emoticon was not found"
       end
     end
   end
   translation
+    
 end
 
 def get_english_meaning(path, emoticon)
