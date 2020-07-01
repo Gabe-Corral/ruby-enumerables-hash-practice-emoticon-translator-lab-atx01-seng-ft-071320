@@ -17,10 +17,10 @@ end
 
 def get_japanese_emoticon(path, e_emoticon)
   translation = ""
-  load_library(path).each do |emoticon, lang|
+  load_library(path).each do |key, lang|
     lang.each do |inner_key, emoticon|
       if e_emoticon == emoticon
-        translation = load_yaml[:japanese]
+        translation = 
       end
       if translation == ""
         translation = "Sorry, that emoticon was not found"
